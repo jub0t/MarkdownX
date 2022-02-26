@@ -35,6 +35,7 @@ If you are using the `<pre>` tag, you can highlight the code by.
 
 ```js
 Prism.highlightAll();
+// OR
 Markdown.highlightAll();
 ```
 
