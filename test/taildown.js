@@ -23,7 +23,7 @@ class TailDown {
   parse(MarkdownText) {
     const HtmlCode = MarkdownText.replace(
       /^# (.*$)/gim,
-      `<h1 style="${this.data.h1.customClass || ""}" class="text-6xl ${
+      `<h1 style="${this.data.h1.customClass || ""} " class="text-6xl ${
         this.data.h1.customClass || ""
       } ">$1</h1>`
     )
@@ -41,19 +41,19 @@ class TailDown {
       )
       .replace(
         /^#### (.*$)/gim,
-        `<h4 style="${this.data.h4.customClass || ""}" class="text-3xl ${
+        `<h4 style="${this.data.h4.customClass || ""}" class="text-2xl ${
           this.data.h4.customClass || ""
         } ">$1</h4>`
       )
       .replace(
         /^##### (.*$)/gim,
-        `<h5 style="${this.data.h5.customClass || ""}" class="text-2xl ${
+        `<h5 style="${this.data.h5.customClass || ""}" class="text-xl ${
           this.data.h5.customClass || ""
         } ">$1</h5>`
       )
       .replace(
         /^###### (.*$)/gim,
-        `<h6 style="${this.data.h6.customClass || ""}" class="text-xl ${
+        `<h6 style="${this.data.h6.customClass || ""}" class="text-lg ${
           this.data.h6.customClass || ""
         } ">$1</h6>`
       )

@@ -2,8 +2,13 @@
 
 ## Install
 
-```
-Link Soon
+```html
+<script src="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/src/taildown.min.js"></script>
+<!-- Add this if you will use code snippets -->
+<link
+  href="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/styles/prism-dracula.min.css"
+  rel="stylesheet"
+/>
 ```
 
 ## Usage
@@ -16,7 +21,7 @@ Markdown = new TailDown();
 
 To parse, use the `.parse()` function.
 
-```jsW
+```js
 MarkdownCode = `
 # Blog Post
 `;
@@ -39,6 +44,10 @@ This is how you can put custom class/style in any tag.
 Markdown = new TailDown({
   a: {
     customClass: "hover:text-blue-500",
+    extendStyle: "display: block;",
+  },
+  h3: {
+    customClass: "text-gray-600",
     extendStyle: "display: block;",
   },
 });
