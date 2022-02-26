@@ -6,9 +6,7 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "uglify-js": "^3.15.2"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {},
   "repository": {
