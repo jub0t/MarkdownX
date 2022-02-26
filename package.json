@@ -1,5 +1,25 @@
 {
+  "name": "tailwindsmarkdown",
+  "version": "1.0.0",
+  "description": "Use markdown with tailwinds",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {
     "uglify-js": "^3.15.2"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jareer12/TailwindsMarkdown.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jareer12/TailwindsMarkdown/issues"
+  },
+  "homepage": "https://github.com/jareer12/TailwindsMarkdown#readme"
 }
