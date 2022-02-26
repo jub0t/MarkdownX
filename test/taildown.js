@@ -53,6 +53,8 @@ class TailDown {
     };
 
     this.data = data;
+    if (!this.data) this.data = {};
+    if (!this.data.i) this.data.i = {};
     if (!this.data.a) this.data.a = {};
     if (!this.data.b) this.data.b = {};
     if (!this.data.h1) this.data.h1 = {};
@@ -62,6 +64,7 @@ class TailDown {
     if (!this.data.h5) this.data.h5 = {};
     if (!this.data.h6) this.data.h6 = {};
     if (!this.data.pre) this.data.pre = {};
+    if (!this.data.img) this.data.img = {};
     this.Style = `<style>code[class*="language-"],
 pre[class*="language-"] {
   color: #ccc;
@@ -319,8 +322,10 @@ div.code-toolbar > .toolbar > .toolbar-item > span:hover {
 }
 </style>`;
   }
-  highlightAll() {
-    Prism.highlight();
+  escape(s) {
+    return s.replace(/[\u00A0-\u9999<>\&]/gim, function (i) {
+      return "&#" + i.charCodeAt(0) + ";";
+    });
   }
   parse(MarkdownText) {
     const HtmlCode = MarkdownText.replace(
@@ -354,9 +359,12 @@ div.code-toolbar > .toolbar > .toolbar-item > span:hover {
       )
       .replace(
         /\*(.*)\*/gim,
-        `<i class="${this.data.b.customClass || ""}">$1</i>`
+        `<i class="${this.data.i.customClass || ""}">$1</i>`
       )
-      .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
+      .replace(
+        /!\[(.*?)\]\((.*?)\)/gim,
+        `<img  class="${this.data.img.customClass || ""}" alt='$1' src='$2' />`
+      )
       .replace(
         /\[(.*?)\]\((.*?)\)/gim,
         `<a href='$2' class="${this.data.a.customClass || ""}">$1</a>`
@@ -368,31 +376,7 @@ div.code-toolbar > .toolbar > .toolbar-item > span:hover {
       );
     return `${HtmlCode.trim()}\n${this.Style}`;
   }
+  highlightAll() {
+    Prism.highlightAll();
+  }
 }
-
-Markdown = new TailDown({
-  a: {
-    customClass: "text-blue-500",
-  },
-  h1: {
-    customClass: "text-gray-700",
-  },
-  h2: {
-    customClass: "text-gray-700",
-  },
-  pre: {
-    theme: "dracula",
-  },
-});
-
-document.getElementById("textarea").addEventListener("keyup", function () {
-  document.getElementById("markdown").innerHTML = Markdown.parse(
-    document.getElementById("textarea").value
-  );
-  TailDown.highlightAll();
-});
-
-document.getElementById("markdown").innerHTML = Markdown.parse(
-  document.getElementById("textarea").value
-);
-TailDown.highlightAll();

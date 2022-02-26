@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
-  <script src="../prism.js"></script>
   <title>Document</title>
 </head>
 
 <body>
-  <div class="w-full flex flex-wrap justify-center w-full">
-    <div class="flex mt-8 flex-wrap justify-center w-11/12 grid grid-cols-2">
-      <textarea id="textarea" class="focus:outline-none w-full bg-gray-100 px-3" cols="30" rows="10"># H1
+  <div class="w-full flex flex-wrap justify-center w-full bg-gray-900 text-gray-300">
+    <div class="flex mt-8 flex-wrap justify-center w-11/12 grid grid-cols-2 gap-5 mb-5">
+      <textarea id="textarea" class="rounded focus:outline-none w-full bg-gray-800 opacity-80 px-3 py-3" cols="30"
+        rows="10"># H1
 ## H2
 ### H3
 #### H4
@@ -25,80 +25,25 @@
 
 
 [Youtube](https://www.youtube.com/)
+
 <div class="w-6/12">
 ![Image](https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg)
 </div>
+
+
 ```js
 // Code Tag
-async function jareer()
-{
-
-}
-const name = "jareer"
-const number =1234
-const bool = true
-class TailDown {
-  constructor(data) {
-    this.data = data;
-  }
-  parse(MarkdownText) {
-    if (!this.data.a) this.data.a = {};
-    if (!this.data.b) this.data.b = {};
-    if (!this.data.h1) this.data.h1 = {};
-    if (!this.data.h2) this.data.h2 = {};
-    if (!this.data.h3) this.data.h3 = {};
-    if (!this.data.h4) this.data.h4 = {};
-    if (!this.data.h5) this.data.h5 = {};
-    if (!this.data.h6) this.data.h6 = {};
-    const HtmlCode = MarkdownText.replace(
-      /^# (.*$)/gim,
-      `<h1 class="text-6xl ${this.data.h1.customClass || ""} ">$1</h1>`
-    )
-      .replace(
-        /^## (.*$)/gim,
-        `<h2 class="text-5xl ${this.data.h2.customClass || ""} ">$1</h2>`
-      )
-      .replace(
-        /^### (.*$)/gim,
-        `<h3 class="text-3xl ${this.data.h3.customClass || ""} ">$1</h3>`
-      )
-      .replace(
-        /^#### (.*$)/gim,
-        `<h4 class="text-3xl ${this.data.h4.customClass || ""} ">$1</h4>`
-      )
-      .replace(
-        /^##### (.*$)/gim,
-        `<h5 class="text-2xl ${this.data.h5.customClass || ""} ">$1</h5>`
-      )
-      .replace(
-        /^###### (.*$)/gim,
-        `<h6 class="text-xl ${this.data.h6.customClass || ""} ">$1</h6>`
-      )
-      .replace(/^\> (.*$)/gim, "<blockquote>$1</blockquote>")
-      .replace(
-        /\*\*(.*)\*\*/gim,
-        `<b class="${this.data.b.customClass || ""}">$1</b>`
-      )
-      .replace(
-        /\*(.*)\*/gim,
-        `<i class="${this.data.b.customClass || ""}">$1</i>`
-      )
-      .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-      .replace(
-        /\[(.*?)\]\((.*?)\)/gim,
-        `<a href='$2' class="${this.data.a.customClass || ""}">$1</a>`
-      )
-      .replace(/\n$/gim, "<br/>")
-
-    return HtmlCode.trim();
-  }
-}
-```</textarea>
-      <div id="markdown" class=" h-screen w-full p-3"></div>
+console.log("Hello World")
+``` 
+</textarea>
+      <div id="markdown" class=" h-screen w-full"></div>
 
     </div>
   </div>
 </body>
-<script src="../index.js"></script>
+<script src="../test/prism.js"></script>
+<script src="../test/taildown.js"></script>
+<script src="../test/index.js"></script>
+<link href="./index.css" rel="stylesheet">
 
 </html>
