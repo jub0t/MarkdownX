@@ -89,7 +89,7 @@ class TailDown {
           this.data.code.customClass || ""
         }" class="language-$1">$2</code></pre>`
       );
-    return `${HtmlCode.trim()}`;
+    return `${HtmlCode.trim().replace("  ", " ").trim()}`;
   }
   highlightAll() {
     Prism.highlightAll();

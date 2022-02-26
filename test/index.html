@@ -7,46 +7,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/src/prism.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/src/taildown.min.js"></script>
   <link href="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/styles/prism-dracula.min.css"
     rel="stylesheet" />
   <title>Document</title>
 </head>
 
-<body>
-  <div class="w-full flex flex-wrap justify-center w-full bg-gray-900 text-gray-300">
+<body class="bg-gray-900 text-gray-300">
+  <div class="w-full flex flex-wrap justify-center w-full">
     <div class="flex mt-8 flex-wrap justify-center w-11/12 grid grid-cols-2 gap-5 mb-5">
       <textarea id="textarea" class="rounded focus:outline-none w-full bg-gray-800 opacity-80 px-3 py-3" cols="30"
-        rows="10"># H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+        rows="10"># Blog Post
 
-** Bold **
-* Italic *
+## Blog Post
 
+### Blog Post
 
-[Youtube](https://www.youtube.com/)
+#### Blog Post
 
-<div class="w-6/12">
-![Image](https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg)
-</div>
+##### Blog Post
 
-
-```js
-// Code Tag
-console.log("Hello World")
-``` 
-</textarea>
+###### Blog Post</textarea>
       <div id="markdown" class=" h-screen w-full"></div>
 
     </div>
   </div>
 </body>
 <script src="../src/taildown.js"></script>
-<link h ref="./index.css" rel="stylesheet">
+<link href="./index.css" rel="stylesheet">
 <script src="../test/index.js"></script>
 
 </html>
