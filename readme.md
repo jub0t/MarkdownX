@@ -39,6 +39,12 @@ Prism.highlightAll();
 Markdown.highlightAll();
 ```
 
+If your code has HTML in it that you need to encode you can use `encodeHTML`
+
+```js
+Markdown = new TailDown({ escapeHTML: true });
+```
+
 ## Config
 
 This is how you can put custom class/style in any tag.

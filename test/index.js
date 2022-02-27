@@ -1,4 +1,4 @@
-Markdown = new TailDown();
+Markdown = new TailDown({ escapeHTML: true });
 
 document.getElementById("textarea").addEventListener("keyup", function () {
   document.getElementById("markdown").innerHTML = Markdown.parse(
@@ -11,9 +11,3 @@ document.getElementById("markdown").innerHTML = Markdown.parse(
   document.getElementById("textarea").value
 );
 Markdown.highlightAll();
-
-MarkdownCode = `
-# Blog Post
-`;
-HTML = Markdown.parse(MarkdownCode);
-console.log(HTML);
