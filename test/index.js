@@ -1,4 +1,4 @@
-Markdown = new TailDown({ escapeHTML: true });
+Markdown = new TailDown({ escapeHTML: false });
 
 document.getElementById("textarea").addEventListener("keyup", function () {
   document.getElementById("markdown").innerHTML = Markdown.parse(

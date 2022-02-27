@@ -14,6 +14,7 @@ class TailDown {
     if (!this.data.pre) this.data.pre = {};
     if (!this.data.img) this.data.img = {};
     if (!this.data.code) this.data.code = {};
+    if (!this.data.blockquote) this.data.blockquote = {};
     if (!this.data.escapeHTML) this.data.escapeHTML = false;
   }
   format(html) {
@@ -44,6 +45,11 @@ class TailDown {
       return s;
     }
   }
+  replaceRegex(regex, replacement) {
+    return function (str) {
+      return str.replace(regex, replacement);
+    };
+  }
   parseCodeBlock(data) {
     if (!data.pre) data.pre = {};
     if (!data.code) data.code = {};
@@ -58,7 +64,7 @@ class TailDown {
     return html;
   }
   parse(MarkdownText) {
-    const HtmlCode = this.escape(MarkdownText, this.data.escapeHTML)
+    const HtmlCode = this.escape(MarkdownText, this.data.escapeHTML || false)
       .replace(
         /^# (.*$)/gim,
         `<h1 style="${this.data.h1.extendStyle || ""}" class="text-6xl ${
@@ -95,7 +101,12 @@ class TailDown {
           this.data.h6.customClass || ""
         } ">$1</h6>`
       )
-      .replace(/^\> (.*$)/gim, "<blockquote>$1</blockquote>")
+      .replace(
+        /^\> (.*$)/gim,
+        `<blockquote style="${this.data.blockquote.extendStyle || ""}" class="${
+          this.data.blockquote.customClass || ""
+        }">$1</blockquote>`
+      )
       .replace(
         /\*\*(.*)\*\*/gim,
         `<b style="${this.data.b.extendStyle || ""}" class="${
@@ -121,6 +132,7 @@ class TailDown {
         }">$1</a>`
       )
       .replace(/\n$/gim, "<br/>");
+    console.log();
     return this.parseCodeBlock({ string: HtmlCode });
   }
   highlightAll() {
