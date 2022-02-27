@@ -5,7 +5,7 @@
 ```html
 <!-- Main File -->
 <script src="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/src/taildown.min.js"></script>
-<!-- Fore Code Snippets -->
+<!-- For Code Snippets -->
 <script src="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/src/prism.min.js"></script>
 <link
   href="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/styles/prism-dracula.min.css"
@@ -39,7 +39,7 @@ Prism.highlightAll();
 Markdown.highlightAll();
 ```
 
-If your code has HTML in it that you need to encode you can use `encodeHTML`
+If your code has HTML in it that you need to encode you can use `escapeHTML`
 
 ```js
 Markdown = new TailDown({ escapeHTML: true });
