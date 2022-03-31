@@ -4,11 +4,11 @@
 
 ```html
 <!-- Main File -->
-<script src="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/src/taildown.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tailmark/src/taildown.min.js"></script>
 <!-- For Code Snippets -->
-<script src="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/src/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tailmark/src/prism.min.js"></script>
 <link
-  href="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/styles/prism-dracula.min.css"
+  href="https://cdn.jsdelivr.net/npm/tailmark/styles/prism-dracula.min.css"
   rel="stylesheet"
 />
 ```

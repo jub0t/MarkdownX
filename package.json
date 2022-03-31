@@ -1,14 +1,17 @@
 {
-  "name": "TailwindsMarkdown",
-  "version": "1.0.0",
+  "name": "tailmark",
+  "version": "0.0.1",
   "description": "Use markdown with tailwinds",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {},
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  },
+  "scripts": {
+    "tailwinds": "npx tailwindcss -i ./test/build.css -o ./test/tailwinds.css --watch --minify"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jareer12/TailwindsMarkdown.git"
@@ -19,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/jareer12/TailwindsMarkdown/issues"
   },
-  "homepage": "https://github.com/jareer12/TailwindsMarkdown#readme"
+  "homepage": "https://github.com/jareer12/TailwindsMarkdown#readme",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.2"
+  }
 }

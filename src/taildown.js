@@ -128,9 +128,9 @@ class TailDown {
       )
       .replace(
         /\[(.*?)\]\((.*?)\)/gim,
-        `<a style="${this.data.a.extendStyle || " "}" href='$2' class="${
-          this.data.a.customClass || " "
-        }">$1</a>`
+        `<a style="${this.data.a.extendStyle || " "}" href='$2' ${
+          this.data.a.newTab ? "target=_blank" : ""
+        } class="${this.data.a.customClass || " "}">$1</a>`
       )
       .replace(/\n$/gim, "<br/>")
       .replace(

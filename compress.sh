@@ -1,1 +1,0 @@
-uglifyjs src/taildown.js -o src/taildown.min.js

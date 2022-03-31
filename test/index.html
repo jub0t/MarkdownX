@@ -2,50 +2,83 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/src/prism.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/gh/jareer12/TailwindsMarkdown@latest/styles/prism-dracula.min.css"
-    rel="stylesheet" />
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../test/tailwinds.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tailmark/src/prism.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailmark/styles/prism-dracula.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
-<body class="bg-zinc-900 text-gray-300">
-  <div class="w-full flex flex-wrap justify-center w-full">
-    <div class="flex mt-8 flex-wrap justify-center w-11/12 grid grid-cols-2 gap-5 mb-5">
-      <textarea id="textarea" class="text-sm resize-none focus:outline-none w-full bg-zinc-800 opacity-80 px-3 py-3"
-        cols="30" rows="10"># Playground
-
-* Unordered List
-* Example
-* Step
+<body class="text-sm">
+    <div class="py-16 bg-white overflow-hidden">
+        <div class="px-4 sm:px-6 lg:px-8 grid-cols-2 gap-5 grid">
+            <div class="h-screen">
+                <textarea id="box" class="outline-none border-none rounded-md w-full h-screen w-full"
+                    placeholder="Enter Markdown"># **TailDown** 
+Render markdown along-side __TailwindsCss__. 
 
 
-This is a code example
+Create blogs with __TailwindsCss__ and make it easier for your users to write markdown. Render Images, links, code blocks and more with TailDown, compatible with both TailwindsCss-based websites and websites that don't use __TailwindsCss__
 
-```js
-class Mark () {
-    constructor() {
-       console.log(1)
-    }
-}
+
+[![Check Github Repo](https://sectorgeek.com/content/images/2020/08/github-features-banner-1.jpg)](https://github.com/jareer12/TailwindsMarkdown)
+Get source code and documentation on [Github](https://github.com/jareer12/TailwindsMarkdown)
+
+
+## **Features**
+
+* Customization
+* TailwindsCss Compatibility
+* Extremely Fast Rendering
+* Really Small (<2kb) File
+
+
+To render code blocks using markdown you will need to import these files in your project. The following block has dracula theme, you can get new themes at our [Github Repo](https://github.com/jareer12/TailwindsMarkdown/tree/main/styles)
+```html
+<script src="https://cdn.jsdelivr.net/npm/tailmark/src/prism.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/tailmark/styles/prism-dracula.min.css" rel="stylesheet" />
 ```
+</textarea>
+            </div>
+            <div class="w-full" id="display">
 
-You can also add images or add **Bold**/*Italic* text like this. Or can also [link stuff](https://www.youtube.com/)
-
-
-![Image](https://www.markdownguide.org/assets/images/markdown-guide-og.jpg)</textarea>
-      <div id="markdown" class=" h-screen w-full"></div>
-
+            </div>
+        </div>
     </div>
-  </div>
-
-
 </body>
-<link href="./index.css" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
 <script src="../src/taildown.js"></script>
-<script src="../test/index.js"></script>
+<script>
+    display = $("#display").get(0)
+    TailDown = new TailDown({
+        escapeHTML: true,
+        h1: {
+            customClass: "text-gray-700"
+        },
+        h2: {
+            customClass: "text-gray-700"
+        },
+        a: {
+            newTab: false,
+            customClass: "text-blue-300"
+        }
+    })
+    display.innerHTML = TailDown.parse(document.getElementById("box").value)
+    document.getElementById("box").addEventListener("keyup", function () {
+        display.innerHTML = TailDown.parse(document.getElementById("box")
+            .value)
+    })
+</script>
 
 </html>
