@@ -63,3 +63,4 @@ Markdown = new TailDown({
 ```
 
 Code snippet(`<pre>`) themes are in [The theme folder](./styles).
+![Preview](./preview.png)
