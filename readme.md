@@ -8,7 +8,7 @@
 <!-- For Code Snippets -->
 <script src="https://cdn.jsdelivr.net/npm/tailmark/src/prism.min.js"></script>
 <link
-  href="https://cdn.jsdelivr.net/npm/tailmark/styles/prism-dracula.min.css"
+  href="https://cdn.jsdelivr.net/npm/tailmark/styles/dracula.min.css"
   rel="stylesheet"
 />
 ```
