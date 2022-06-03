@@ -1,6 +1,7 @@
 # Markdown For Tailwinds
 
-⚡ Markdown parser compatible with Tailwind Css
+⚡ Markdown parser compatible with Tailwind Css. Prism.js themes can be found [here](./styles).
+
 ![Preview](./preview.png)
 
 ## Installation
@@ -22,6 +23,7 @@
 ## Usage
 
 ```js
+// Initialized
 const Parser = new Tayparser();
 ```
 
@@ -58,5 +60,3 @@ const Markdown = new TailDown({
   },
 });
 ```
-
-Code snippet(`<pre>`) themes are in [The theme folder](./styles).
