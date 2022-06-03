@@ -1,10 +1,16 @@
 # Markdown For Tailwinds
 
-## Install
+⚡ Markdown parser compatible with Tailwind Css
+![Preview](./preview.png)
+
+## Installation
 
 ```html
 <!-- Main File -->
-<script src="https://cdn.jsdelivr.net/npm/tailmark/src/taildown.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tailmark/src/index.min.js"></script>
+```
+
+```html
 <!-- For Code Snippets -->
 <script src="https://cdn.jsdelivr.net/npm/tailmark/src/prism.min.js"></script>
 <link
@@ -15,42 +21,33 @@
 
 ## Usage
 
-create the class.
-
 ```js
-Markdown = new TailDown();
+const Parser = new Tayparser();
 ```
 
-To parse, use the `.parse()` function.
-
 ```js
-MarkdownCode = `
+// Parse Markdown
+const MarkdownCode = `
 # Blog Post
 `;
-HTML = Markdown.parse(MarkdownCode);
-console.log(HTML);
+const Code = Parser.parse(MarkdownCode);
+console.log(Code);
 ```
 
-If you are using the `<pre>` tag, you can highlight the code by.
-
 ```js
+// Highlight All <pre> Snippets
 Prism.highlightAll();
-// OR
-Markdown.highlightAll();
 ```
 
-If your code has HTML in it that you need to encode you can use `escapeHTML`
-
 ```js
-Markdown = new TailDown({ escapeHTML: true });
+// Escape HTML
+const Markdown = new TailDown({ escapeHTML: true });
 ```
 
 ## Config
 
-This is how you can put custom class/style in any tag.
-
 ```js
-Markdown = new TailDown({
+const Markdown = new TailDown({
   a: {
     customClass: "hover:text-blue-500",
     extendStyle: "display: block;",
@@ -63,4 +60,3 @@ Markdown = new TailDown({
 ```
 
 Code snippet(`<pre>`) themes are in [The theme folder](./styles).
-![Preview](./preview.png)
