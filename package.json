@@ -18,7 +18,12 @@
     "type": "git",
     "url": "git+https://github.com/jareer12/TailwindsMarkdown.git"
   },
-  "keywords": [],
+  "keywords": [
+    "tailwind",
+    "markdown",
+    "parser",
+    "parse"
+  ],
   "author": {
     "name": "Jareer Abdullah"
   },
