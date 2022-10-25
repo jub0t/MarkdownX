@@ -6,19 +6,7 @@
 
 ## Installation
 
-```html
-<!-- Main File -->
-<script src="https://cdn.jsdelivr.net/npm/tailmark/src/index.min.js"></script>
-```
-
-```html
-<!-- For Code Snippets -->
-<script src="https://cdn.jsdelivr.net/npm/tailmark/src/prism.min.js"></script>
-<link
-  href="https://cdn.jsdelivr.net/npm/tailmark/styles/dracula.min.css"
-  rel="stylesheet"
-/>
-```
+Get the file from Releases, get styles from [here](https://github.com/PrismJS/prism-themes)
 
 ## Usage
 
