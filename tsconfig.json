@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "strict": true,
+    "module": "System",
+    "target": "ES2022",
+    "noUnusedLocals": true,
     "removeComments": true,
-    "target": "ES2022"
+    "outFile": "dist/build.js"
   },
-  "rules": {
-    "no-unused-declaration": true
-  },
-  "include": ["*.ts", "./*.ts", "./*/*.ts"],
+  "include": ["./src/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
